@@ -34,8 +34,7 @@ export const ChromePresets: Record<ChromePresetVersion, Preset> = {
             "--compressed",
             "--tlsv1.2",
             "--alps",
-            "--cert-compression brotli",
-            "--location"
+            "--cert-compression brotli"
         ]
     },
     "110": {
@@ -151,8 +150,7 @@ export const SafariPresets: Record<SafariPresetVersion, Preset> = {
             "--tlsv1.0",
             "--no-tls-session-ticket",
             "--cert-compression zlib",
-            "--http2-pseudo-headers-order mspa",
-            "--location"
+            "--http2-pseudo-headers-order mspa"
         ]
     }
 };
