@@ -11,14 +11,18 @@ jobs:
     publish-npm:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
+            - run: echo "PACKAGE_JSON=$(jq -c . < package.json)" >> $GITHUB_ENV
+            - uses: pnpm/action-setup@v4
+              with:
+                version: ${{ fromJson(env.PACKAGE_JSON).volta.pnpm }}
             - uses: actions/setup-node@v3
               with:
-                  node-version: 20.11.0
-                  registry-url: https://registry.npmjs.org/
-            - run: yarn install --frozen-lockfile
-            - run: yarn clean
-            - run: yarn build
+                node-version: ${{ fromJson(env.PACKAGE_JSON).volta.node }}
+                registry-url: https://registry.npmjs.org/
+            - run: pnpm install --frozen-lockfile
+            - run: pnpm clean
+            - run: pnpm build
             - run: npm publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

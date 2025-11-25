@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "ESNext", // Target ESNext for modern features
+        "module": "CommonJS", // Output CommonJS for Node.js compatibility
+        "strict": true, // Enable strict type checking
+        "esModuleInterop": true, // Enable ES module interop
+        "forceConsistentCasingInFileNames": true, // Ensure consistent file names
+        "outDir": "./dist", // Output directory for compiled files
+        "rootDir": "./src", // Source directory for TypeScript files
+        "declaration": true, // Generate type declaration files
+        "declarationDir": "./dist", // Directory for declaration files
+    },
+    "include": ["src"],
+    "exclude": ["node_modules"]
+}

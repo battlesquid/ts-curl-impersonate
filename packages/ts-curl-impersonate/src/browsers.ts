@@ -8,7 +8,7 @@ export interface Browser {
     binary: string;
 }
 
-export const BINARY_PATH = path.join(__dirname, "..", "bin", process.platform);
+export const BINARY_PATH = path.join(require.resolve(`@ts-curl-impersonate/bin-${process.platform}`), "bin");
 
 export const BROWSERS: Record<string, Browser[] | undefined> = {
     win32: [

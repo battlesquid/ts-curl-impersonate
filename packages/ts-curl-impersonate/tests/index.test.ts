@@ -1,4 +1,4 @@
-import { equal } from "assert";
+import { test, expect } from "vitest";
 import { RequestBuilder } from "../src";
 
 test("Returns a successful GET reponse on TLS Fingerprinting protected URL", async () => {
@@ -8,7 +8,7 @@ test("Returns a successful GET reponse on TLS Fingerprinting protected URL", asy
         .send();
 
     expect(response.stderr).toBeUndefined();
-    expect(equal(response.details?.http_code, 200));
+    expect(response.details?.http_code).toEqual(200);
 });
 
 test("Returns a successful POST reponse", async () => {
@@ -26,5 +26,5 @@ test("Returns a successful POST reponse", async () => {
         .send();
 
     expect(response.stderr).toBeUndefined();
-    expect(equal(response.details?.http_code, 200));
+    expect(response.details?.http_code).toEqual(200);
 })

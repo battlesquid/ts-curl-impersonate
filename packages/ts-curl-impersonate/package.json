@@ -1,0 +1,48 @@
+{
+    "name": "ts-curl-impersonate",
+    "description": "A typescript wrapper around cURL-impersonate.",
+    "version": "1.0.3",
+    "author": "battlesquid",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "build:clean": "yarn clean && yarn build",
+        "clean": "rm -rf dist",
+        "lint": "eslint src/**",
+        "lint:fix": "pnpm lint --fix",
+        "neat": "pnpm lint:fix && pnpm pretty",
+        "pretty": "prettier . --write",
+        "pretty:check": "prettier . --check",
+        "test": "vitest --run",
+        "test:clean": "pnpm clean && pnpm build && pnpm test"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.10.0",
+        "@types/node": "^20.5.9",
+        "eslint": "^9.10.0",
+        "prettier": "^3.3.3",
+        "ts-node": "^10.9.2",
+        "typescript": "5.5.4",
+        "typescript-eslint": "^8.6.0",
+        "vitest": "^4.0.14"
+    },
+    "optionalDependencies": {
+        "@ts-curl-impersonate/bin-darwin": "1.0.0",
+        "@ts-curl-impersonate/bin-linux": "1.0.0",
+        "@ts-curl-impersonate/bin-win32": "1.0.0"
+    },
+    "keywords": [
+        "web-scraping",
+        "tls-fingerprinting",
+        "curl-impersonate",
+        "typescript"
+    ],
+    "files": [
+        "dist"
+    ],
+    "volta": {
+        "node": "20.11.0",
+        "yarn": "1.22.22"
+    }
+}
