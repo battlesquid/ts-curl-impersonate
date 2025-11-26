@@ -40,6 +40,16 @@ importers:
       vitest:
         specifier: ^4.0.14
         version: 4.0.14(@types/node@20.19.25)
+    optionalDependencies:
+      '@ts-curl-impersonate/bin-darwin':
+        specifier: 'workspace:'
+        version: link:../bin-darwin
+      '@ts-curl-impersonate/bin-linux':
+        specifier: 'workspace:'
+        version: link:../bin-linux
+      '@ts-curl-impersonate/bin-win32':
+        specifier: 'workspace:'
+        version: link:../bin-win32
 
 packages:
 

@@ -8,6 +8,7 @@
         "build": "tsc --build",
         "build:clean": "pnpm -r build:clean",
         "clean": "pnpm -r clean",
+        "clean:all": "pnpm -r clean:all && rm -rf node_modules",
         "test": "pnpm --filter=ts-curl-impersonate test",
         "test:clean": "pnpm build:clean && pnpm test"
     },
