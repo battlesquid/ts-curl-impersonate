@@ -1,9 +1,0 @@
-{
-    "name": "@ts-curl-impersonate/bin-win32",
-    "version": "1.0.0",
-    "license": "MIT",
-    "os": [
-        "win32"
-    ],
-    "cpu": ["x64"]
-}

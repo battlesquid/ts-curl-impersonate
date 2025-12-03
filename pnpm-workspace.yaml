@@ -3,3 +3,5 @@ packages:
 
 onlyBuiltDependencies:
   - esbuild
+
+linkWorkspacePackages: true

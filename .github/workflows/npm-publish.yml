@@ -23,6 +23,6 @@ jobs:
             - run: pnpm install --frozen-lockfile
             - run: pnpm clean
             - run: pnpm build
-            - run: npm publish
+            - run: pnpm -r publish --no-git-checks --access public
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

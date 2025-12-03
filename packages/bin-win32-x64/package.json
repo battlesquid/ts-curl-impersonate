@@ -1,0 +1,10 @@
+{
+    "name": "ts-curl-impersonate-bin-win32-x64",
+    "version": "1.0.0",
+    "license": "MIT",
+    "os": [
+        "win32"
+    ],
+    "cpu": ["x64"],
+    "files": ["bin"]
+}
