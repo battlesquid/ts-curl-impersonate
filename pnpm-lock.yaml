@@ -42,16 +42,16 @@ importers:
         version: 4.0.14(@types/node@20.19.25)
     optionalDependencies:
       ts-curl-impersonate-bin-darwin-x64:
-        specifier: 1.0.0
+        specifier: 1.0.1
         version: link:../bin-darwin-x64
       ts-curl-impersonate-bin-linux-arm64:
-        specifier: 1.0.0
+        specifier: 1.0.1
         version: link:../bin-linux-arm64
       ts-curl-impersonate-bin-linux-x64:
-        specifier: 1.0.0
+        specifier: 1.0.1
         version: link:../bin-linux-x64
       ts-curl-impersonate-bin-win32-x64:
-        specifier: 1.0.0
+        specifier: 1.0.1
         version: link:../bin-win32-x64
 
 packages:
