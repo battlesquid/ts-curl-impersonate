@@ -1,0 +1,10 @@
+{
+    "name": "ts-curl-impersonate-bin-linux-arm64",
+    "version": "1.0.0",
+    "license": "MIT",
+    "os": [
+        "linux"
+    ],
+    "cpu": ["arm64"],
+    "files": ["bin"]
+}

@@ -8,53 +8,56 @@ export interface Browser {
     binary: string;
 }
 
-export const BINARY_PATH = path.join(__dirname, "..", "bin", process.platform);
+export const BINARY_PATH = require
+    .resolve(`ts-curl-impersonate-bin-${process.platform}-${process.arch}/package.json`, { paths: [path.resolve(process.cwd(), "./node_modules")] })
+    .replace("package.json", "")
+    .concat("bin");
 
 export const BROWSERS: Record<string, Browser[] | undefined> = {
     win32: [
         {
             name: "chrome",
             arch: "x64",
-            binary: "chrome-x64.exe"
+            binary: "chrome.exe"
         },
         {
             name: "safari",
             arch: "x64",
-            binary: "chrome-x64.exe"
+            binary: "chrome.exe"
         }
     ],
     darwin: [
         {
             name: "firefox",
             arch: "x64",
-            binary: "firefox-x64"
+            binary: "firefox"
         },
         {
             name: "chrome",
             arch: "x64",
-            binary: "chrome-x64"
+            binary: "chrome"
         }
     ],
     linux: [
         {
             name: "firefox",
             arch: "x64",
-            binary: "firefox-x64"
+            binary: "firefox"
         },
         {
             name: "chrome",
             arch: "x64",
-            binary: "chrome-x64"
+            binary: "chrome"
         },
         {
             name: "firefox",
             arch: "arm64",
-            binary: "firefox-arm64"
+            binary: "firefox"
         },
         {
             name: "chrome",
             arch: "arm64",
-            binary: "chrome-arm64"
+            binary: "chrome"
         }
     ]
 };

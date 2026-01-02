@@ -1,0 +1,10 @@
+{
+    "name": "ts-curl-impersonate-bin-darwin-x64",
+    "version": "1.0.0",
+    "license": "MIT",
+    "os": [
+        "darwin"
+    ],
+    "cpu": ["x64"],
+    "files": ["bin"]
+}

@@ -1,0 +1,49 @@
+{
+    "name": "ts-curl-impersonate",
+    "description": "A typescript wrapper around cURL-impersonate.",
+    "version": "1.0.5",
+    "author": "battlesquid",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "build:clean": "pnpm clean && pnpm build",
+        "clean": "rm -rf dist",
+        "clean:all": "pnpm clean && rm -rf node_modules",
+        "lint": "eslint src/**",
+        "lint:fix": "pnpm lint --fix",
+        "pretty": "prettier . --write",
+        "pretty:check": "prettier . --check",
+        "neat": "pnpm lint:fix && pnpm pretty",
+        "neat:check": "pnpm lint && pnpm pretty:check",
+        "test": "vitest --run",
+        "test:clean": "pnpm clean:build && pnpm test"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.10.0",
+        "@types/node": "^20.5.9",
+        "eslint": "^9.10.0",
+        "prettier": "^3.3.3",
+        "typescript": "5.5.4",
+        "typescript-eslint": "^8.6.0",
+        "vitest": "^4.0.14"
+    },
+    "optionalDependencies": {
+        "ts-curl-impersonate-bin-darwin-x64": "1.0.0",
+        "ts-curl-impersonate-bin-linux-arm64": "1.0.0",
+        "ts-curl-impersonate-bin-linux-x64": "1.0.0",
+        "ts-curl-impersonate-bin-win32-x64": "1.0.0"
+    },
+    "keywords": [
+        "web-scraping",
+        "tls-fingerprinting",
+        "curl-impersonate",
+        "typescript"
+    ],
+    "files": [
+        "dist"
+    ],
+    "volta": {
+        "extends": "../../package.json"
+    }
+}
