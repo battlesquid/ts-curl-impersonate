@@ -9,7 +9,7 @@ export interface Browser {
 }
 
 export const BINARY_PATH = require
-    .resolve(`ts-curl-impersonate-bin-${process.platform}-${process.arch}/package.json`, { paths: [path.resolve(process.cwd(), "./node_modules")] })
+    .resolve(`ts-curl-impersonate-bin-${process.platform}-${process.arch}/package.json`, { paths: [path.resolve(process.cwd())] })
     .replace("package.json", "")
     .concat("bin");
 

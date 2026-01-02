@@ -15,6 +15,9 @@
         "neat": "pnpm -r neat",
         "neat:check": "pnpm -r neat:check"
     },
+    "devDependencies": {
+        "typescript": "5.5.4"
+    },
     "volta": {
         "node": "24.12.0",
         "pnpm": "10.27.0"
