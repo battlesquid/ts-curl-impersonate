@@ -16,8 +16,8 @@
         "neat:check": "pnpm -r neat:check"
     },
     "volta": {
-        "node": "20.11.0",
-        "pnpm": "10.23.0"
+        "node": "24.12.0",
+        "pnpm": "10.27.0"
     },
-    "packageManager": "pnpm@10.23.0"
+    "packageManager": "pnpm@10.27.0"
 }
