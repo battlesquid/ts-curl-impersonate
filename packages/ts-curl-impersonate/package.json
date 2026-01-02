@@ -1,7 +1,7 @@
 {
     "name": "ts-curl-impersonate",
     "description": "A typescript wrapper around cURL-impersonate.",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "author": "battlesquid",
     "license": "MIT",
     "main": "dist/index.js",
@@ -32,10 +32,10 @@
         "vitest": "^4.0.14"
     },
     "optionalDependencies": {
-        "ts-curl-impersonate-bin-darwin-x64": "1.0.0",
-        "ts-curl-impersonate-bin-linux-arm64": "1.0.0",
-        "ts-curl-impersonate-bin-linux-x64": "1.0.0",
-        "ts-curl-impersonate-bin-win32-x64": "1.0.0"
+        "ts-curl-impersonate-bin-darwin-x64": "1.0.1",
+        "ts-curl-impersonate-bin-linux-arm64": "1.0.1",
+        "ts-curl-impersonate-bin-linux-x64": "1.0.1",
+        "ts-curl-impersonate-bin-win32-x64": "1.0.1"
     },
     "keywords": [
         "web-scraping",
