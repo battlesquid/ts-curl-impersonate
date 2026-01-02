@@ -12,9 +12,10 @@
         "clean:all": "pnpm clean && rm -rf node_modules",
         "lint": "eslint src/**",
         "lint:fix": "pnpm lint --fix",
-        "neat": "pnpm lint:fix && pnpm pretty",
         "pretty": "prettier . --write",
         "pretty:check": "prettier . --check",
+        "neat": "pnpm lint:fix && pnpm pretty",
+        "neat:check": "pnpm lint && pnpm pretty:check",
         "test": "vitest --run",
         "test:clean": "pnpm clean:build && pnpm test"
     },

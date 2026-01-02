@@ -20,5 +20,4 @@ jobs:
                 node-version: ${{ fromJson(env.PACKAGE_JSON).volta.node }}
                 registry-url: https://registry.npmjs.org/
             - run: pnpm i
-            - run: pnpm lint
-            - run: pnpm pretty:check
+            - run: pnpm neat:check

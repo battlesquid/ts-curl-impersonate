@@ -11,7 +11,9 @@
         "clean": "pnpm -r clean",
         "clean:all": "pnpm -r clean:all && rm -rf node_modules",
         "test": "pnpm --filter=ts-curl-impersonate test",
-        "test:clean": "pnpm build:clean && pnpm test"
+        "test:clean": "pnpm build:clean && pnpm test",
+        "neat": "pnpm -r neat",
+        "neat:check": "pnpm -r neat:check"
     },
     "volta": {
         "node": "20.11.0",
