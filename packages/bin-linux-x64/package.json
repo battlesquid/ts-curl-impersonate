@@ -2,6 +2,10 @@
     "name": "ts-curl-impersonate-bin-linux-x64",
     "version": "1.0.0",
     "license": "MIT",
+    "repository": {
+        "url": "https://github.com/battlesquid/ts-curl-impersonate",
+        "directory": "packages/bin-linux-x64"
+    },
     "os": [
         "linux"
     ],

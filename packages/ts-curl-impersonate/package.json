@@ -5,6 +5,10 @@
     "author": "battlesquid",
     "license": "MIT",
     "main": "dist/index.js",
+    "repository": {
+        "url": "https://github.com/battlesquid/ts-curl-impersonate",
+        "directory": "packages/ts-curl-impersonate"
+    },
     "scripts": {
         "build": "tsc",
         "build:clean": "pnpm clean && pnpm build",

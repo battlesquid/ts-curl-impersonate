@@ -2,6 +2,10 @@
     "name": "ts-curl-impersonate-bin-win32-x64",
     "version": "1.0.0",
     "license": "MIT",
+    "repository": {
+        "url": "https://github.com/battlesquid/ts-curl-impersonate",
+        "directory": "packages/bin-win32-x64"
+    },
     "os": [
         "win32"
     ],
