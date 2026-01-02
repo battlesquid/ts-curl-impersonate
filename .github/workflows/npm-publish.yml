@@ -24,6 +24,8 @@ jobs:
               with:
                 node-version: ${{ fromJson(env.PACKAGE_JSON).volta.node }}
                 registry-url: https://registry.npmjs.org/
+            - name: Upgrade npm for OCID support
+              run: npm i -g npm@latest
             - run: pnpm install --frozen-lockfile
             - run: pnpm clean
             - run: pnpm build
