@@ -8,7 +8,7 @@
         "outDir": "./dist", // Output directory for compiled files
         "rootDir": "./src", // Source directory for TypeScript files
         "declaration": true, // Generate type declaration files
-        "declarationDir": "./dist", // Directory for declaration files
+        "declarationDir": "./dist" // Directory for declaration files
     },
     "include": ["src"],
     "exclude": ["node_modules"]
