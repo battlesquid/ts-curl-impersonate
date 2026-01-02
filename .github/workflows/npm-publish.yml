@@ -7,6 +7,10 @@ on:
     release:
         types: [created]
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
     publish-npm:
         runs-on: ubuntu-latest
@@ -24,5 +28,3 @@ jobs:
             - run: pnpm clean
             - run: pnpm build
             - run: pnpm -r publish --no-git-checks --access public
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
