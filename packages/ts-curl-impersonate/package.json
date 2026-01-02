@@ -44,7 +44,8 @@
         "typescript"
     ],
     "files": [
-        "dist"
+        "dist",
+        "../../README.md"
     ],
     "volta": {
         "extends": "../../package.json"

@@ -1,6 +1,6 @@
 {
     "name": "ts-curl-impersonate-bin-linux-x64",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "repository": {
         "url": "https://github.com/battlesquid/ts-curl-impersonate",
@@ -10,5 +10,11 @@
         "linux"
     ],
     "cpu": ["x64"],
-    "files": ["bin"]
+    "files": ["bin"],
+    "publishConfig": {
+        "executableFiles": [
+            "bin/chrome",
+            "bin/firefox"
+        ]
+    }
 }
