@@ -1,6 +1,6 @@
 {
     "name": "@ts-curl-impersonate/root",
-    "private":true,
+    "private": true,
     "version": "0.0.0",
     "description": "A typescript wrapper around cURL-impersonate.",
     "author": "battlesquid",
@@ -12,15 +12,15 @@
         "clean:all": "pnpm -r clean:all && rm -rf node_modules",
         "test": "pnpm --filter=ts-curl-impersonate test",
         "test:clean": "pnpm build:clean && pnpm test",
-        "neat": "pnpm -r neat",
-        "neat:check": "pnpm -r neat:check"
+        "lint": "pnpm -r lint",
+        "lint:fix": "pnpm -r lint:fix",
+        "fmt": "pnpm -r fmt",
+        "fmt:fix": "pnpm -r fmt:fix",
+        "neat": "pnpm lint && pnpm fmt",
+        "neat:fix": "pnpm lint:fix && pnpm fmt:fix"
     },
     "devDependencies": {
-        "typescript": "5.5.4"
+        "typescript": "6.0.3"
     },
-    "volta": {
-        "node": "24.12.0",
-        "pnpm": "10.27.0"
-    },
-    "packageManager": "pnpm@10.27.0"
+    "packageManager": "pnpm@11.3.0"
 }

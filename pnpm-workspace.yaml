@@ -5,3 +5,6 @@ onlyBuiltDependencies:
   - esbuild
 
 linkWorkspacePackages: true
+
+allowBuilds:
+  esbuild: true

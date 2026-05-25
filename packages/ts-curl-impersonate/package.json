@@ -1,7 +1,7 @@
 {
     "name": "ts-curl-impersonate",
     "description": "A typescript wrapper around cURL-impersonate.",
-    "version": "1.0.9",
+    "version": "1.0.9-rc.0",
     "author": "battlesquid",
     "license": "MIT",
     "main": "dist/index.js",
@@ -14,21 +14,17 @@
         "build:clean": "pnpm clean && pnpm build",
         "clean": "rm -rf dist",
         "clean:all": "pnpm clean && rm -rf node_modules",
-        "lint": "eslint src/**",
-        "lint:fix": "pnpm lint --fix",
-        "pretty": "prettier . --write",
-        "pretty:check": "prettier . --check",
-        "neat": "pnpm lint:fix && pnpm pretty",
-        "neat:check": "pnpm lint && pnpm pretty:check",
+  		"lint": "oxlint src",
+		"lint:fix": "oxlint --fix src",
+		"fmt": "oxfmt --check src",
+		"fmt:fix": "oxfmt src",
         "test": "vitest --run",
         "test:clean": "pnpm clean:build && pnpm test"
     },
     "devDependencies": {
-        "@eslint/js": "^9.10.0",
         "@types/node": "^20.5.9",
-        "eslint": "^9.10.0",
-        "prettier": "^3.3.3",
-        "typescript-eslint": "^8.6.0",
+        "oxfmt": "^0.51.0",
+        "oxlint": "^1.66.0",
         "vitest": "^4.0.14"
     },
     "optionalDependencies": {
