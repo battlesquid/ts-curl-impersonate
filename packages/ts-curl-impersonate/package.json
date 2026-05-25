@@ -12,8 +12,6 @@
     "scripts": {
         "build": "tsc",
         "build:clean": "pnpm clean && pnpm build",
-        "clean": "rm -rf dist",
-        "clean:all": "pnpm clean && rm -rf node_modules",
   		"lint": "oxlint src",
 		"lint:fix": "oxlint --fix src",
 		"fmt": "oxfmt --check src",

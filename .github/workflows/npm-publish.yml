@@ -20,6 +20,5 @@ jobs:
             - name: Upgrade npm for OCID support
               run: npm i -g npm@latest
             - run: pnpm install --frozen-lockfile
-            - run: pnpm clean
             - run: pnpm build
             - run: pnpm -r publish --no-git-checks
