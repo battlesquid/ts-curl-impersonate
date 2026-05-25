@@ -1,4 +1,4 @@
-import { exec } from "node:child_process";
+import { spawn } from "node:child_process";
 import path from "node:path";
 import {
 	BINARY_PATH,
@@ -379,8 +379,8 @@ export class RequestBuilder {
 	 * @returns The RequestBuilder instance
 	 */
 	flag(name: string, value?: string) {
-		if (value) {
-			this._flags.push(`${name} "${value}"`);
+		if (value !== undefined) {
+			this._flags.push(name, value);
 		} else {
 			this._flags.push(name);
 		}
@@ -435,24 +435,39 @@ export class RequestBuilder {
 		const headers = this.buildHeaderFlags({ ...this._headers, ...preset.headers });
 		const flags = this.buildFlags(this._flags);
 
-		const command = [
-			path.join(BINARY_PATH, browser.binary),
+		const splitPresetFlag = (s: string): string[] => {
+			const idx = s.indexOf(" ");
+			return idx === -1 ? [s] : [s.slice(0, idx), s.slice(idx + 1)];
+		};
+
+		const args = [
 			...flags,
-			...preset.flags,
+			...preset.flags.flatMap(splitPresetFlag),
 			...headers,
 			"-s",
-			`-w "\\n%{json}"`,
-			`-X ${this._method}`,
-			`"${this._url}"`,
-		].join(" ");
+			"-w",
+			"\n%{json}",
+			"-X",
+			this._method,
+			this._url,
+		];
 
 		return new Promise((resolve, reject) => {
-			exec(command, { cwd: BINARY_PATH }, (err, stdout, stderr) => {
-				if (err) {
-					reject(err);
-					return;
-				}
-
+			const child = spawn(path.join(BINARY_PATH, browser.binary), args, {
+				cwd: BINARY_PATH,
+			});
+			let stdout = "";
+			let stderr = "";
+			child.stdout.setEncoding("utf8");
+			child.stderr.setEncoding("utf8");
+			child.stdout.on("data", (chunk) => {
+				stdout += chunk;
+			});
+			child.stderr.on("data", (chunk) => {
+				stderr += chunk;
+			});
+			child.once("error", reject);
+			child.once("close", () => {
 				if (stderr.trim().length > 0) {
 					resolve({ response: undefined, details: undefined, stderr });
 					return;
@@ -472,10 +487,20 @@ export class RequestBuilder {
 			"-v", // TODO: potentially add a way to parse stdout with flag included
 			"-X",
 		];
-		return flags.filter((flag) => !flagBlacklist.includes(flag));
+		const out: string[] = [];
+		for (let i = 0; i < flags.length; i++) {
+			if (flagBlacklist.includes(flags[i])) {
+				if (i + 1 < flags.length && !flags[i + 1].startsWith("-")) {
+					i++;
+				}
+				continue;
+			}
+			out.push(flags[i]);
+		}
+		return out;
 	}
 
 	private buildHeaderFlags(headers: Record<string, string>) {
-		return Object.entries(headers).map(([key, value]) => `-H "${key}: ${value}"`);
+		return Object.entries(headers).flatMap(([key, value]) => ["-H", `${key}: ${value}`]);
 	}
 }
